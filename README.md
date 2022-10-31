@@ -1,7 +1,7 @@
 ## youtube code along => Code a Dictionary with React and Material UI - Tutorial ---   freeCodeCamp.org
 
-=> npx create-react-app@latest .
-=> while trying to install material-ui I had the following error:
+* => npx create-react-app@latest .
+* => while trying to install material-ui I had the following error:
    * resolved by running this: npm config set legacy-peer-deps true
    * then installed material-ui: npm i @material-ui/core
    
