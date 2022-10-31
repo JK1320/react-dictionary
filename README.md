@@ -1,7 +1,34 @@
 ## youtube code along => Code a Dictionary with React and Material UI - Tutorial ---   freeCodeCamp.org
 
 => npx create-react-app@latest .
-=> 
+=> while trying to install material-ui I had the following error:
+   * resolved by running this: npm config set legacy-peer-deps true
+   * then installed material-ui: npm i @material-ui/core
+   
+
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: react-dictionary@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^16.8.0 || ^17.0.0" from @material-ui/core@4.12.4
+npm ERR! node_modules/@material-ui/core
+npm ERR!   @material-ui/core@"*" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! See /Users/jas/.npm/eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/jas/.npm/_logs/2022-10-31T01_36_18_569Z-debug-0.log
+
+*--------------------------*
 
 
 # Getting Started with Create React App
