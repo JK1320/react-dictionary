@@ -30,6 +30,16 @@ npm ERR!     /Users/jas/.npm/_logs/2022-10-31T01_36_18_569Z-debug-0.log
 
 *--------------------------*
 
+* import dictionary api for free
+=> https://dictionaryapi.dev/
+
+---------------------------
+* to call dictionary api use axios
+=> npm i axios
+
+----------------------------
+
+
 
 # Getting Started with Create React App
 
