@@ -35,7 +35,7 @@ useEffect(() => {
         maxWidth="md"
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
-        <Header category={category} setCategory={setCategory} />
+        <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
       </Container>
     </div>
   );
