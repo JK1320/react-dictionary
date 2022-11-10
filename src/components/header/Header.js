@@ -1,5 +1,5 @@
 // themeProvider allows us to apply themes to MUI components
-import { createTheme, TextField, ThemeProvider } from '@material-ui/core';
+import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import "./Header.css";
 
@@ -20,6 +20,15 @@ const darkTheme = createTheme({
       <div className="inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField id="standard-basic" label="Standard" variant="standard" />
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Select"
+            helperText="Please select your country"
+          >
+              <MenuItem>English</MenuItem>
+            
+          </TextField>
         </ThemeProvider>
       </div>
     </div>
