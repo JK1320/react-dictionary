@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import "./Header.css";
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div className='header'>
+        <span className='title'>Word Hunt</span>
+    </div>
   )
 }
 
