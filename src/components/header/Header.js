@@ -2,8 +2,9 @@
 import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import "./Header.css";
+import categories from "../../data/category";
 
-const Header = () => {
+const Header = ({category, setCategory}) => {
 
 const darkTheme = createTheme({
   palette: {
@@ -19,15 +20,23 @@ const darkTheme = createTheme({
       <span className="title">Word Hunt</span>
       <div className="inputs">
         <ThemeProvider theme={darkTheme}>
-          <TextField id="standard-basic" label="Standard" variant="standard" />
           <TextField
-            id="outlined-select-currency"
+          className='search'
+            label="Search a word"
+            variant="standard"
+          />
+          <TextField
             select
-            label="Select"
-            helperText="Please select your country"
+            label="Language"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            helperText="Please select your language"
           >
-              <MenuItem>English</MenuItem>
-            
+            {categories.map((option) => (
+              <MenuItem key={option.label} value={option.label}>
+                {option.value}
+              </MenuItem>
+            ))}
           </TextField>
         </ThemeProvider>
       </div>
