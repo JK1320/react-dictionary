@@ -3,3 +3,12 @@
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 35vh;
+    width: 100%;
+}
