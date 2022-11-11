@@ -15,6 +15,11 @@ const darkTheme = createTheme({
   },
 });
 
+const handleChange = (language) => {
+setCategory(language);
+setWord("");
+}
+
   return (
     <div className="header">
       <span className="title">{word ? word : "Word Hunt"}</span>
@@ -32,7 +37,7 @@ const darkTheme = createTheme({
             className="select"
             label="Language"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => handleChange(e.target.value)}
             helperText="Please select your language"
           >
             {categories.map((option) => (
