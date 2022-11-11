@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Container } from '@material-ui/core';
 import Header from './components/header/Header';
+import Definitions from './components/definitions/Definitions';
 
 function App() {
 const [word, setWord] = useState("");
@@ -12,7 +13,7 @@ const [category, setCategory] = useState("en");
 const dictionaryApi = async () => {
 try {
   const data = await axios.get(
-    "https://api.dictionaryapi.dev/api/v2/entries/en/plane"
+    `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
   );
 setMeanings(data.data);
 } catch (error) {
@@ -22,7 +23,7 @@ setMeanings(data.data);
 
 useEffect(() => {
  dictionaryApi();
-}, []);
+}, [word, category]);
 
 
 
@@ -35,7 +36,15 @@ useEffect(() => {
         maxWidth="md"
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
-        <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
+        <Header
+          category={category}
+          setCategory={setCategory}
+          word={word}
+          setWord={setWord}
+        />
+        {meanings && (
+          <Definitions word={word} meanings={meanings} category={category} />
+        )}
       </Container>
     </div>
   );
