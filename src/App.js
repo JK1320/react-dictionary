@@ -22,7 +22,8 @@ setMeanings(data.data);
 };
 
 useEffect(() => {
- dictionaryApi();
+  dictionaryApi();
+  // eslint-disable-next-line
 }, [word, category]);
 
 
