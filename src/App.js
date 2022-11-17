@@ -10,6 +10,7 @@ function App() {
 const [word, setWord] = useState("");
 const [meanings, setMeanings] = useState([]);
 const [category, setCategory] = useState("en");
+const [LightMode, setLightMode] = useState(false);
 
 const DarkMode = withStyles({
   switchBase: {
@@ -50,13 +51,13 @@ useEffect(() => {
     >
       <Container
         maxWidth="md"
-        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+        style={{ display: "flex", flexDirection: "column", height: "100vh", justifyContent: 'space-evenly' }}
       >
         <div
           style={{ position: "absolute", top: 0, right: 15, paddingTop: 10 }}
         >
-          <span></span>
-          <DarkMode />
+          <span>{LightMode ? "Dark" : "Light"} Mode</span>
+          <DarkMode checked={LightMode} onChange={()=> setLightMode(!setLightMode)} />
         </div>
         <Header
           category={category}
