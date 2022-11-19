@@ -12,19 +12,7 @@ const [meanings, setMeanings] = useState([]);
 const [category, setCategory] = useState("en");
 const [LightMode, setLightMode] = useState(false);
 
-const DarkMode = withStyles({
-  switchBase: {
-    color: grey[300],
-    "&$checked": {
-      color: grey[500],
-    },
-    "&$checked + $track": {
-      backgroundColor: grey[500],
-    },
-  },
-  checked: {},
-  tracked: {},
-})(Switch);
+
 
 const dictionaryApi = async () => {
 try {
@@ -42,6 +30,20 @@ useEffect(() => {
   // eslint-disable-next-line
 }, [word, category]);
 
+
+const DarkMode = withStyles({
+  switchBase: {
+    color: grey[300],
+    "&$checked": {
+      color: grey[500],
+    },
+    "&$checked + $track": {
+      backgroundColor: grey[500],
+    },
+  },
+  checked: {},
+  tracked: {},
+})(Switch);
 
 
   return (
