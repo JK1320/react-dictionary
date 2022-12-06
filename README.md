@@ -44,7 +44,21 @@ npm ERR!     /Users/jas/.npm/_logs/2022-10-31T01_36_18_569Z-debug-0.log
   "liveServer.settings.root": "" -->
 
   ---------------------------------
-* had eslint error. used following command to resolve it.
+* had eslint error. used following command to resolve it but still not resolved. 
+removed the following from package.json=>
+ =>  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+& this =>
+"devDependencies": {
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react-hooks": "^5.0.0-next-c08d8b804-20221118"
+  }
+
 
 Error =>
 ERROR in [eslint] Failed to load plugin 'flowtype' declared in 'package.json » eslint-config-react-app': Cannot find module 'eslint/use-at-your-own-risk'

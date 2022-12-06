@@ -1,10 +1,11 @@
 import './App.css';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Container, Switch, withStyles } from '@material-ui/core';
+import { alpha, Container, styled, Switch } from '@material-ui/core';
 import Header from './components/header/Header';
 import Definitions from './components/definitions/Definitions';
 import { grey } from '@material-ui/core/colors';
+
 
 function App() {
 const [word, setWord] = useState("");
@@ -31,19 +32,19 @@ useEffect(() => {
 }, [word, category]);
 
 
-const DarkMode = withStyles({
-  switchBase: {
+const DarkMode = styled(Switch)(({ theme }) => ({
+  "& .MuiSwitch-switchBase.Mui-checked": {
     color: grey[300],
-    "&$checked": {
-      color: grey[500],
-    },
-    "&$checked + $track": {
-      backgroundColor: grey[500],
+    "&:hover": {
+      backgroundColor: alpha(grey[500], theme.palette.action.hoverOpacity),
     },
   },
-  checked: {},
-  tracked: {},
-})(Switch);
+  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+    backgroundColor: grey[500],
+  },
+}));
+
+//const label = { inputProps: { "aria-label": "Color switch demo" } };
 
 
   return (
@@ -53,13 +54,22 @@ const DarkMode = withStyles({
     >
       <Container
         maxWidth="md"
-        style={{ display: "flex", flexDirection: "column", height: "100vh", justifyContent: 'space-evenly' }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100vh",
+          justifyContent: "space-evenly",
+        }}
       >
         <div
           style={{ position: "absolute", top: 0, right: 15, paddingTop: 10 }}
         >
           <span>{LightMode ? "Dark" : "Light"} Mode</span>
-          <DarkMode checked={LightMode} onChange={()=> setLightMode(!setLightMode)} />
+          <DarkMode
+            color="secondary"
+            checked={LightMode}
+            onChange={() => setLightMode(!LightMode)}
+          />
         </div>
         <Header
           category={category}
